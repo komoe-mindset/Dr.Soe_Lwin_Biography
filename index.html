@@ -1,16 +1,62 @@
+
 <!DOCTYPE html>
-<html lang="my">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee Meditation - Dhamma Path</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Soe Lwin (Mandalay) | A Life Dedicated to Dhamma</title>
+    <meta name="description" content="Discover the teachings and global Dhamma propagation work of Dr. Soe Lwin (Mandalay). Explore meditation centers, core frameworks, and path to inner peace.">
+    <meta name="theme-color" content="#b45309">
+    
+    <!-- Performance: Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  </head>
-  <body>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://lh3.googleusercontent.com">
+    
+    <!-- Performance: Preload LCP Hero Image (Aggressively Optimized) -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=45&w=600" imagesrcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=45&w=600 600w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=70&w=1200 1200w" imagesizes="100vw" fetchpriority="high">
+    
+    <!-- Non-blocking Google Fonts with Display Swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </noscript>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      :root {
+        --font-inter: 'Inter', sans-serif;
+        --font-playfair: 'Playfair Display', serif;
+      }
+      /* Ensure font-display is respected everywhere */
+      @font-face { font-display: swap; }
+      
+      body {
+        font-family: var(--font-inter);
+        background-color: #020617; 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .heading-font {
+        font-family: var(--font-playfair);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-container {
+        min-height: 95vh;
+        background-color: #020617;
+      }
+      .hero-text-container {
+        min-height: 300px;
+      }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<script type="module" src="/index.tsx"></script>
+</body>
 </html>

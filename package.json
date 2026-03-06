@@ -1,31 +1,29 @@
 {
-  "name": "dhamma-path-coffee",
+  "name": "v5-dr.-soe-lwin-(mandalay)---dhamma-path",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",
-    "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "motion": "^12.35.0",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tailwind-merge": "^2.6.1"
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.10",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.39.3",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }
