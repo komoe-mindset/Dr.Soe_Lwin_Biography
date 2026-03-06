@@ -14,7 +14,8 @@
     "lucide-react": "^0.562.0",
     "motion": "^12.35.0",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "vite-tsconfig-paths": "^6.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
