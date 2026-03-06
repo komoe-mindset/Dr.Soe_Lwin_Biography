@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Language } from '../types';
+import { Language } from '../_types';
 import { Globe, Video, Youtube, Facebook, GraduationCap } from 'lucide-react';
-import { LMS_URL } from '../constants';
+import { LMS_URL } from '../_constants';
 
 interface OutreachProps {
   lang: Language;
