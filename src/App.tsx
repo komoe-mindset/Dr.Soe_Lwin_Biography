@@ -1,16 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { Language } from './types';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Framework from './components/Framework';
-import FeaturedVideo from './components/FeaturedVideo';
-import Practices from './components/Practices';
-import Centers from './components/Centers';
-import Outreach from './components/Outreach';
-import Contact from './components/Contact';
-import ChatBot from './components/ChatBot';
+import Navbar from './components/navbar';
+import Hero from './components/hero';
+import About from './components/about';
+import Framework from './components/framework';
+import FeaturedVideo from './components/featuredvideo';
+import Practices from './components/practices';
+import Centers from './components/centers';
+import Outreach from './components/outreach';
+import Contact from './components/contact';
+import ChatBot from './components/chatbot';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
