@@ -44,19 +44,19 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/95"></div>
       </div>
       
-      <div className="relative z-10 text-center text-white px-6 max-w-6xl space-y-6 md:space-y-4 hero-text-container flex flex-col items-center justify-center">
-        <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-500/30 rounded-full bg-black/40 backdrop-blur-md animate-in fade-in slide-in-from-top-10 duration-1000 mb-2">
-           <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></div>
+      <div className="relative z-10 text-center text-white px-6 max-w-6xl space-y-8 hero-text-container flex flex-col items-center justify-center">
+        <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-500/30 rounded-full bg-black/40 backdrop-blur-md mb-2">
+           <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
            <span className="uppercase tracking-[0.6em] text-[10px] md:text-xs text-amber-200 font-bold">
             {lang === 'en' ? 'Wisdom of the Present' : 'ပစ္စုပ္ပန်၏ အလင်းရောင်'}
           </span>
         </div>
         
-        <div className="animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200">
+        <div className="">
           <h1 className="heading-font text-5xl md:text-8xl leading-tight font-bold drop-shadow-2xl text-white">
             Dr. Soe Lwin
           </h1>
-          <div className="flex flex-col items-center -mt-1 md:-mt-2 space-y-1">
+          <div className="flex flex-col items-center space-y-1 mt-2">
             <span className="text-xl md:text-3xl font-medium tracking-[0.2em] text-blue-200/90 heading-font uppercase">
               Dhamma Lann
             </span>
@@ -66,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           </div>
         </div>
 
-        <div className="pt-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-400">
+        <div className="pt-4">
           {lang === 'mm' ? (
             <div className="text-base md:text-xl text-white/95 font-medium max-w-2xl mx-auto leading-relaxed flex flex-col gap-1">
               <span className="block">ဝိသုဒ္ဓိမဂ်ဓမ္မလမ်းဝိပဿနာအဖွဲ့များ၏ ဦးဆောင်နာယက၊</span>
@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 pt-6 md:pt-10 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 pt-6 md:pt-10">
           <a 
             href={LMS_URL}
             target="_blank"
@@ -120,7 +120,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
       <button 
         onClick={(e) => scrollToSection(e, 'about')}
         aria-label="Scroll to biography section"
-        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 text-white/40 hover:text-amber-500 transition-colors animate-bounce"
+        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 text-white/40 hover:text-amber-500 transition-colors"
       >
         <ChevronDown size={32} />
       </button>

@@ -17,13 +17,31 @@
     <!-- Performance: Preload LCP Hero Image (Aggressively Optimized) -->
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=45&w=600" imagesrcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=45&w=600 600w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=70&w=1200 1200w" imagesizes="100vw" fetchpriority="high">
     
-    <!-- Non-blocking Google Fonts with Display Swap -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    </noscript>
-
+    <!-- Standard Google Fonts Load -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            animation: {
+              'ken-burns': 'ken-burns 30s infinite alternate linear',
+            },
+            keyframes: {
+              'ken-burns': {
+                '0%': { transform: 'scale(1.1) translate(0, 0)' },
+                '100%': { transform: 'scale(1.2) translate(-2%, -2%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
     
     <style>
       :root {
