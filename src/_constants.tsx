@@ -83,16 +83,101 @@ export const NAV_LINKS: NavLink[] = [
   { label: { en: 'Contact', mm: 'ဆက်သွယ်ရန်' }, href: '#contact' },
 ];
 
+const PYIN_OO_LWIN_DISCOURSES: Discourse[] = [
+  {
+    date: "Book 1",
+    title: { en: "Vipassana Wisdom", mm: "ဝိပဿနာပညာ" },
+    summary: { 
+      en: "Wisdom that enables one to endure worldly conditions (Lokadhamma) and provides guidance for a courageous life through the Eightfold Path.", 
+      mm: "လောကဓံတရားများကို ကြံ့ကြံ့ခံနိုင်ရန်နှင့် မဂ္ဂင်ရှစ်ပါးလမ်းစဉ်ဖြင့် ဘဝကို ရဲရဲဝံ့ဝံ့ ရင်ဆိုင်နိုင်ရန် လမ်းညွှန်မှုပေးသော ဝိပဿနာပညာ။" 
+    },
+    keyTerms: [
+      { term: "Atta-panna (အတ္တပညာ)", meaning: { en: "Technical Skills", mm: "လောကီအတတ်ပညာ" }, explanation: { en: "Skills needed to survive in the world.", mm: "လောက၌ အသက်မွေးဝမ်းကျောင်းပြုရန် လိုအပ်သော အတတ်ပညာ။" } },
+      { term: "Thita-panna (ဌိတပညာ)", meaning: { en: "Life Wisdom", mm: "ဘဝအသိဉာဏ်" }, explanation: { en: "Wisdom needed for a peaceful life.", mm: "အေးချမ်းသာယာသော ဘဝတည်ဆောက်ရန် လိုအပ်သော အသိဉာဏ်။" } }
+    ],
+    roadmap: [
+      { en: "Proof through Morality (Sila), Concentration (Samadhi), and Wisdom (Panna).", mm: "သီလ၊ သမာဓိ၊ ပညာတို့ဖြင့် မိမိကိုယ်ကို သက်သေပြပါ။" },
+      { en: "Shift from Personal View to Natural View of mind and matter.", mm: "ပုဂ္ဂိုလ်သတ္တဝါအမြင်မှ ရုပ်နာမ်ဓမ္မ သဘာဝအမြင်သို့ ပြောင်းလဲပါ။" }
+    ]
+  },
+  {
+    date: "Book 2",
+    title: { en: "Abandoning Greed", mm: "လောဘစွန့်ဖို့သာလိုရင်း" },
+    summary: { 
+      en: "The essential goal of Dhamma practice is the exhaustion of greed (Lobha), which is the root cause of all suffering.", 
+      mm: "ဒုက္ခအားလုံး၏ အရင်းအမြစ်ဖြစ်သော လောဘကို အကြွင်းမဲ့ ပယ်သတ်ခြင်းသည် သာသနာတော်၏ အဓိက ရည်မှန်းချက် ဖြစ်သည်။" 
+    },
+    keyTerms: [
+      { term: "Samudaya Sacca (သမုဒယသစ္စာ)", meaning: { en: "Truth of Cause", mm: "ဒုက္ခဖြစ်ကြောင်းအမှန်" }, explanation: { en: "Greed-Craving is the source of all suffering.", mm: "လောဘတဏှာသည် ဆင်ရဲဒုက္ခအားလုံး၏ အရင်းအမြစ် ဖြစ်သည်။" } }
+    ],
+    roadmap: [
+      { en: "Use Dana to abandon the greed of possession.", mm: "ဒါနဖြင့် ပိုင်ဆိုင်လိုသော လောဘကို ပယ်ပါ။" },
+      { en: "Use Sila to abandon the greed of disturbing others.", mm: "သီလဖြင့် သူတစ်ပါးကို နှောင့်ယှက်လိုသော လောဘကို ပယ်ပါ။" },
+      { en: "Use Bhavana to abandon the greed of 'I' and 'Mine'.", mm: "ဘာဝနာဖြင့် 'ငါ၊ ငါ့ဥစ္စာ' ဟု စွဲလမ်းသော လောဘကို ပယ်ပါ။" }
+    ]
+  },
+  {
+    date: "Practice Guide",
+    title: { en: "Kamma-Kusala & Nana-Kusala", mm: "ကမ္မကုသိုလ် နှင့် ဉာဏကုသိုလ်" },
+    summary: { 
+      en: "Adding wisdom on top of action: Volition (Setana) is Kamma, while Mindfulness (Sati) is Wisdom.", 
+      mm: "ကမ္မပေါ်၌ ဉာဏ်ဆင့်ခြင်း - စေတနာသည် ကမ္မကုသိုလ်ဖြစ်ပြီး ထိုစေတနာကို သိမြင်သော သတိသည် ဉာဏကုသိုလ် ဖြစ်သည်။" 
+    },
+    roadmap: [
+      { en: "Kamma-Kusala leads to good lives; Nana-Kusala leads to Nibbana.", mm: "ကမ္မကုသိုလ်သည် ဘဝကောင်းကို ပေးပြီး ဉာဏကုသိုလ်သည် နိဗ္ဗာန်သို့ ပို့ဆောင်ပေးသည်။" },
+      { en: "Volition-Kamma goes in front; Mindfulness-Wisdom follows behind.", mm: "စေတနာကမ္မက ရှေ့ကသွားပြီး သတိဉာဏ်က နောက်ကလိုက်ရမည်။" }
+    ]
+  },
+  {
+    date: "Life Management",
+    title: { en: "Morality, Concentration, & Wisdom", mm: "သီလ၊ သမာဓိ၊ ပညာ နှင့် ဘဝ" },
+    summary: { 
+      en: "A comprehensive approach to life management through the three pillars of Dhamma training.", 
+      mm: "သီလ၊ သမာဓိ၊ ပညာ တည်းဟူသော တရားမဏ္ဍိုင်သုံးပါးဖြင့် ဘဝကို စနစ်တကျ စီမံခန့်ခွဲခြင်း။" 
+    },
+    roadmap: [
+      { en: "Broaden view with Wisdom; practice with Morality; build with Concentration.", mm: "ပညာဖြင့် အမြင်ကျယ်ပါ၊ သီလဖြင့် ကျင့်သုံးပါ၊ သမာဓိဖြင့် တည်ဆောက်ပါ။" },
+      { en: "Restrain from disturbing others through physical and verbal actions.", mm: "ကာယကံ၊ ဝစီကံတို့ဖြင့် သူတစ်ပါးကို မနှောင့်ယှက်မိအောင် စောင့်ထိန်းပါ။" }
+    ]
+  },
+  {
+    date: "Daily Life",
+    title: { en: "Coffee Meditation", mm: "ကော်ဖီမဂ္ဂ" },
+    summary: { 
+      en: "Practical application of Satipatthana in daily activities like offering or drinking coffee.", 
+      mm: "ကော်ဖီသောက်ခြင်း သို့မဟုတ် တိုက်ကျွေးခြင်းကဲ့သို့ နေ့စဉ်လုပ်ငန်းဆောင်တာများထဲ၌ သတိပဋ္ဌာန်တရားကို လက်တွေ့ကျင့်သုံးခြင်း။" 
+    },
+    roadmap: [
+      { en: "The volition to offer is Kamma-Kusala; noticing it is Nana-Kusala.", mm: "တိုက်ကျွေးလိုသော စေတနာသည် ကမ္မကုသိုလ်၊ ထိုစေတနာကို သိမြင်ခြင်းသည် ဉာဏကုသိုလ် ဖြစ်သည်။" },
+      { en: "Replace Greed (Lobha) with Mindfulness (Sati) in every action.", mm: "လှုပ်ရှားမှုတိုင်းတွင် လောဘအစား သတိဖြင့် အစားထိုးပါ။" }
+    ]
+  },
+  {
+    date: "Sutta Study",
+    title: { en: "Sotanugata Sutta", mm: "သောတာနုဂတသုတ်" },
+    summary: { 
+      en: "The four immense benefits of hearing, reciting, contemplating, and penetrating the Dhamma with wisdom.", 
+      mm: "တရားတော်များကို နာယူခြင်း၊ ရွတ်ဖတ်ခြင်း၊ ဆင်ခြင်ခြင်းနှင့် ဉာဏ်ဖြင့် ထိုးထွင်းသိမြင်ခြင်းတို့၏ အကျိုးကျေးဇူး ၄ မျိုး။" 
+    },
+    roadmap: [
+      { en: "Dhamma categories appear clearly even in celestial realms if practiced well.", mm: "ကောင်းစွာကျင့်ကြံထားပါက နတ်ပြည်၌ပင် တရားဓမ္မများ ထင်ရှားစွာ ပြန်လည်ပေါ်ပေါက်လာနိုင်သည်။" },
+      { en: "Quickly attain higher Dhamma (Magga-Phala) through previous impressions.", mm: "ရှေးဘဝက ပါရမီအထုံကြောင့် တရားထူးတရားမြတ်ကို လျင်မြန်စွာ ရရှိနိုင်သည်။" }
+    ]
+  }
+];
+
 export const CENTERS: Center[] = [
   {
     id: 'pyin-oo-lwin',
     title: { en: 'Pyin Oo Lwin (Pyin Sar)', mm: 'ပြင်ဦးလွင် (ပြင်စာ)' },
+    discourses: PYIN_OO_LWIN_DISCOURSES,
     description: { 
       en: 'Visuddhimag Dhammalaan offers monthly residential meditation courses and Training of Trainers (TOT) programs in a serene highland setting.', 
       mm: 'ဝိသုဒ္ဓိမဂ် ဓမ္မလမ်းတွင် လစဉ် တရားစခန်းများနှင့် นည်းပြသင်တန်းများကို အေးချမ်းသာယာသော တောင်ပေါ်ဒေသ၌ ပုံမှန်ပို့ချပေးလျက်ရှိသည်။' 
     },
     icon: 'Lotus',
-    phone: '09 794 104 929'
+    phone: '09 794 104 929',
+    detailLink: "https://drive.google.com/drive/folders/1wyMuQ_6XB2S7ayhCvCXwQNSEGtGJh_SZ?usp=sharing"
   },
   {
     id: 'mandalay',

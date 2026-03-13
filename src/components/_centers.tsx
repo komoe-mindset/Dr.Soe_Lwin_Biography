@@ -91,6 +91,16 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
                     {lang === 'en' ? 'Learn More' : 'အသေးစိတ်ကြည့်ရန်'}
                     <ArrowRight size={16} />
                   </button>
+                ) : center.detailLink ? (
+                  <a 
+                    href={center.detailLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-amber-700 font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all"
+                  >
+                    {lang === 'en' ? 'Learn More' : 'အသေးစိတ်ကြည့်ရန်'}
+                    <ArrowRight size={16} />
+                  </a>
                 ) : (
                   <div className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">
                     {lang === 'en' ? 'Direct Contact Available' : 'တိုက်ရိုက်ဆက်သွယ်နိုင်သည်'}
@@ -175,7 +185,10 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
                         <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
                           <Calendar size={20} className="text-amber-600" />
                           <h4 className="text-xl font-bold text-slate-900">
-                            {lang === 'en' ? '2025 Discourse Archive' : '၂၀၂၅ တရားတော်များမှ ကောက်နုတ်ချက်များ'}
+                            {selectedCenter.id === 'pyin-oo-lwin' 
+                              ? (lang === 'en' ? 'Original Basic Books Archive' : 'အခြေခံမူလစာအုပ်များ မှတ်တမ်း')
+                              : (lang === 'en' ? '2025 Discourse Archive' : '၂၀၂၅ တရားတော်များမှ ကောက်နုတ်ချက်များ')
+                            }
                           </h4>
                         </div>
 
