@@ -9,9 +9,12 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ lang }) => {
   const libraryLink = "https://script.google.com/macros/s/AKfycbzM7nmlj6y6qv-emnHWl4aEkP5XGm8RrZObX_yqkEgzpfkEW1cSXT_mdJZeX352GbR0kg/exec";
-
+  
   return (
-    <section id="about" className="py-24 px-6 bg-white overflow-hidden">
+    <section id="about" className="relative py-24 px-6 bg-white overflow-hidden">
+      {/* Top transition gradient */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent pointer-events-none"></div>
+      
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl -z-10"></div>

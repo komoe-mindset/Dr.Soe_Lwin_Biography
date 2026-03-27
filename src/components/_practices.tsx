@@ -148,7 +148,7 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
 
       {/* Modal Overlay */}
       {activePractice !== null && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
           <div 
             className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm"
             onClick={() => setActivePractice(null)}

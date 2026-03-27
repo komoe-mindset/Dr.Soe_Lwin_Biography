@@ -30,12 +30,7 @@ const App: React.FC = () => {
       <main>
         <Hero lang={lang} />
         
-        <div className="relative">
-          {/* Transition Element */}
-          <div className="h-24 bg-gradient-to-b from-slate-900 to-white"></div>
-          
-          <About lang={lang} />
-        </div>
+        <About lang={lang} />
 
         <Framework lang={lang} />
 

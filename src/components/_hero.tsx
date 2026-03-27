@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/95"></div>
       </div>
       
-      <div className="relative z-10 text-center text-white px-6 max-w-6xl space-y-8 hero-text-container flex flex-col items-center justify-center">
+      <div className="relative z-10 text-center text-white px-6 max-w-6xl space-y-8 hero-text-container flex flex-col items-center justify-center pt-24 md:pt-32 pb-12">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-500/30 rounded-full bg-black/40 backdrop-blur-md mb-2">
            <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
            <span className="uppercase tracking-[0.6em] text-[10px] md:text-xs text-amber-200 font-bold">
