@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Language } from '../_types';
+import { Language } from '../types';
 import { GraduationCap, BookOpen, Mic, HeartPulse, ExternalLink } from 'lucide-react';
 
 interface AboutProps {
@@ -38,13 +38,13 @@ const About: React.FC<AboutProps> = ({ lang }) => {
             </div>
           </div>
           
-          <div className="mt-12 border-l-4 border-amber-700 pl-8 py-4 bg-amber-50/50 rounded-r-xl">
+          <blockquote className="mt-12 border-l-4 border-amber-700 pl-8 py-4 bg-amber-50/50 rounded-r-xl">
             <p className="italic text-slate-800 leading-relaxed text-lg">
               {lang === 'en' 
                 ? '"Honored with the title \'Mahasaddhamajawtikadaja\' in 2020 by the State for exceptional contributions to Dhamma."'
                 : '"၂၀၂၀ ခုနှစ်တွင် နိုင်ငံတော်မှ ဆက်ကပ်သော \'မဟာသဒ္ဓမ္မဇောတိကဓဇ\' ဘွဲ့တံဆိပ်တော်ကို ရရှိခဲ့ပါသည်။"'}
             </p>
-          </div>
+          </blockquote>
         </div>
 
         <div className="space-y-8">
@@ -103,7 +103,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
             </div>
           </div>
           
-          <div className="pt-4 flex items-center justify-between border-t border-slate-100">
+          <footer className="pt-4 flex items-center justify-between border-t border-slate-100">
              <div className="flex items-center gap-4 text-slate-600">
                <GraduationCap className="text-amber-700" />
                <span className="font-medium text-sm italic">{lang === 'en' ? 'MBBS (Mandalay), Associate Professor' : 'ဆေးပညာဘွဲ့၊ တွဲဖက်ပါမောက္ခ'}</span>
@@ -112,7 +112,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
                <span className="w-2 h-2 rounded-full bg-green-600" aria-hidden="true"></span>
                {lang === 'en' ? 'Active Propagation' : 'သာသနာပြုဆဲ'}
              </div>
-          </div>
+          </footer>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Language } from '../_types';
-import { NAV_LINKS } from '../_constants';
+import { Language } from '../types';
+import { NAV_LINKS } from '../constants';
 import { Menu, X, Languages } from 'lucide-react';
 
 interface NavbarProps {
@@ -46,11 +46,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
   };
 
   return (
-    <nav className={`fixed w-full top-0 z-[100] transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-black/30 md:bg-transparent py-4'}`}>
+    <header className={`fixed w-full top-0 z-[100] transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-black/30 md:bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
-        <div 
-          className="flex flex-col cursor-pointer"
-          role="button"
+        <button 
+          className="flex flex-col cursor-pointer text-left bg-transparent border-none p-0"
           aria-label="Scroll to top"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
@@ -60,10 +59,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
           <span className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-bold">
             {currentLang === 'en' ? 'Mandalay' : 'မန္တလေး'}
           </span>
-        </div>
+        </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -71,6 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
               target={link.href.startsWith('http') ? "_blank" : "_self"}
               rel={link.href.startsWith('http') ? "noopener noreferrer" : ""}
               onClick={(e) => handleNavClick(e, link.href)}
+              aria-label={link.label[currentLang]}
               className={`text-xs font-bold tracking-widest uppercase transition-colors relative group ${scrolled ? 'text-slate-600' : 'text-white/80'} hover:text-amber-500`}
             >
               {link.label[currentLang]}
@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
             <Languages size={14} />
             {currentLang === 'en' ? 'မြန်မာ' : 'ENGLISH'}
           </button>
-        </div>
+        </nav>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
@@ -113,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[100%] bg-white border-b border-gray-100 py-8 px-6 flex flex-col space-y-6 shadow-2xl">
+        <nav className="md:hidden fixed inset-x-0 top-[100%] bg-white border-b border-gray-100 py-8 px-6 flex flex-col space-y-6 shadow-2xl" aria-label="Mobile navigation">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -121,6 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
               target={link.href.startsWith('http') ? "_blank" : "_self"}
               rel={link.href.startsWith('http') ? "noopener noreferrer" : ""}
               onClick={(e) => handleNavClick(e, link.href)}
+              aria-label={link.label[currentLang]}
               className="text-xl font-bold text-slate-800 border-b border-slate-50 pb-4 flex justify-between items-center"
             >
               {link.label[currentLang]}
@@ -131,9 +132,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang }) => {
              <span className="text-xs uppercase tracking-widest font-bold">Follow the Path</span>
              <div className="flex-1 h-px bg-slate-100"></div>
           </div>
-        </div>
+        </nav>
       )}
-    </nav>
+    </header>
   );
 };
 

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
-import { Language } from '../_types';
+import { Language } from '../types';
 
 interface ChatBotProps {
   lang: Language;
@@ -27,7 +27,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ lang }) => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end pointer-events-none">
+    <aside className="fixed bottom-6 right-6 z-[100] flex flex-col items-end pointer-events-none">
       {/* Floating Action Button */}
       <button
         onClick={handleOpenGemini}
@@ -67,7 +67,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ lang }) => {
 
       {/* Subtle background glow */}
       <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl -z-20 pointer-events-none"></div>
-    </div>
+    </aside>
   );
 };
 

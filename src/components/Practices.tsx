@@ -105,7 +105,7 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
   return (
     <section id="practices" className="py-24 px-6 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <header className="text-center mb-16 space-y-4">
           <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-xs">Practical Wisdom</span>
           <h2 className="text-4xl md:text-5xl heading-font text-slate-900 leading-tight">
             {lang === 'en' ? 'Guided Practices' : 'လက်တွေ့ကျင့်စဉ်များ'}
@@ -115,7 +115,7 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
               ? 'Integrating Dhamma into every breath, step, and moment of your daily life.'
               : 'နေ့စဉ်ဘဝ၏ ထွက်သက်ဝင်သက်တိုင်း၊ ခြေလှမ်းတိုင်းတွင် တရားဓမ္မကို ပေါင်းစပ်ကျင့်ကြံခြင်း။'}
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-3 gap-8">
           {practiceData.map((p, i) => (
@@ -148,7 +148,12 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
 
       {/* Modal Overlay */}
       {activePractice !== null && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
+        <div 
+          className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="practice-modal-title"
+        >
           <div 
             className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm"
             onClick={() => setActivePractice(null)}
@@ -156,23 +161,24 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
           
             <div className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 duration-500 max-h-[90vh] flex flex-col">
               {/* Header - Fixed */}
-              <div className="p-8 md:p-12 pb-4 flex items-center justify-between border-b border-slate-50">
+              <header className="p-8 md:p-12 pb-4 flex items-center justify-between border-b border-slate-50">
                 <div className="flex items-center gap-4">
                   <div className={`p-3 md:p-4 rounded-xl bg-slate-100 flex-shrink-0`}>
                     {practiceData[activePractice].icon}
                   </div>
                   <div>
-                    <h3 className="text-xl md:text-3xl font-bold heading-font leading-tight">{practiceData[activePractice].title[lang]}</h3>
+                    <h3 id="practice-modal-title" className="text-xl md:text-3xl font-bold heading-font leading-tight">{practiceData[activePractice].title[lang]}</h3>
                     <p className="text-amber-600 text-[10px] md:text-sm font-bold tracking-widest uppercase mt-0.5">{practiceData[activePractice].subtitle[lang]}</p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setActivePractice(null)}
+                  aria-label="Close modal"
                   className="p-2 rounded-full hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-900"
                 >
                   <X size={24} />
                 </button>
-              </div>
+              </header>
 
               {/* Content - Scrollable */}
               <div className="px-8 md:px-12 py-6 overflow-y-auto custom-scrollbar flex-grow">
@@ -196,14 +202,14 @@ const Practices: React.FC<PracticesProps> = ({ lang }) => {
               </div>
 
               {/* Footer - Fixed */}
-              <div className="p-6 md:p-8 bg-slate-50/50 border-t border-slate-100">
+              <footer className="p-6 md:p-8 bg-slate-50/50 border-t border-slate-100">
                 <button 
                   onClick={() => setActivePractice(null)}
                   className="w-full bg-slate-900 text-white py-4 md:py-5 rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-amber-700 transition-all shadow-lg hover:shadow-amber-900/20 active:scale-[0.98]"
                 >
                   {lang === 'en' ? 'Close & Contemplate' : 'ပိတ်ပြီး ဆင်ခြင်ရန်'}
                 </button>
-              </div>
+              </footer>
             </div>
         </div>
       )}

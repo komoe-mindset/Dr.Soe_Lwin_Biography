@@ -1,5 +1,5 @@
 
-import { NavLink, Center, Discourse } from './_types';
+import { NavLink, Center, Discourse } from './types';
 
 export const LMS_URL = "https://wgml-1.mindset-it.online/";
 export const PAMPHLET_URL = "https://drive.google.com/file/d/1_hjJMC2NSzEro_ornkJcnlti3Vo805Ge/view?usp=sharing";

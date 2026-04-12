@@ -34,17 +34,17 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           />
           <img 
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format,compress&fm=webp&fit=crop&q=70&w=1200"
-            alt="Buddhist landscape background"
+            alt="Serene Buddhist landscape background with mountains and mist"
             className="w-full h-full object-cover transition-transform duration-[20s] ease-linear scale-110 animate-ken-burns"
             fetchPriority="high"
-            loading="eager"
-            decoding="sync"
+            loading="lazy"
+            decoding="async"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/95"></div>
       </div>
       
-      <div className="relative z-10 text-center text-white px-6 max-w-6xl space-y-8 hero-text-container flex flex-col items-center justify-center">
+      <header className="relative z-10 text-center text-white px-6 max-w-6xl space-y-8 hero-text-container flex flex-col items-center justify-center pt-24 md:pt-32 pb-12">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-500/30 rounded-full bg-black/40 backdrop-blur-md mb-2">
            <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
            <span className="uppercase tracking-[0.6em] text-[10px] md:text-xs text-amber-200 font-bold">
@@ -97,6 +97,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
             href={LMS_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={lang === 'en' ? 'Open LMS Academy in new tab' : 'အွန်လိုင်းသင်တန်းကို တက်ဘ်အသစ်တွင် ဖွင့်ရန်'}
             className="group relative w-full md:w-auto px-10 md:px-12 py-4 md:py-5 bg-slate-900 hover:bg-slate-800 text-white transition-all font-bold tracking-widest uppercase text-[10px] md:text-xs rounded-full shadow-2xl overflow-hidden text-center border border-white/10 flex items-center justify-center gap-2"
           >
             <GraduationCap size={16} className="text-amber-500" />
@@ -104,18 +105,20 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           </a>
           <button 
             onClick={(e) => scrollToSection(e, 'framework')}
+            aria-label={lang === 'en' ? 'Scroll to core teachings section' : 'အဓိက တရားဒေသနာများသို့ သွားရန်'}
             className="group relative w-full md:w-auto px-10 md:px-12 py-4 md:py-5 bg-amber-700 hover:bg-amber-600 text-white transition-all font-bold tracking-widest uppercase text-[10px] md:text-xs rounded-full shadow-[0_10px_40px_rgba(217,119,6,0.3)] overflow-hidden text-center"
           >
             <span className="relative z-10">{lang === 'en' ? 'Explore Teachings' : 'တရားတော်များလေ့လာရန်'}</span>
           </button>
           <button 
             onClick={(e) => scrollToSection(e, 'about')}
+            aria-label={lang === 'en' ? 'Scroll to biography section' : 'ကိုယ်ရေးရာဇဝင်သို့ သွားရန်'}
             className="w-full md:w-auto px-10 md:px-12 py-4 md:py-5 border border-white/30 hover:border-white/60 hover:bg-white/5 text-white backdrop-blur-sm transition-all font-bold tracking-widest uppercase text-[10px] md:text-xs rounded-full text-center"
           >
             {lang === 'en' ? 'Biography' : 'ကိုယ်ရေးရာဇဝင်'}
           </button>
         </div>
-      </div>
+      </header>
 
       <button 
         onClick={(e) => scrollToSection(e, 'about')}

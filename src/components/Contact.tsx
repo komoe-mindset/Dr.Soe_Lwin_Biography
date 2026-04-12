@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Language } from '../_types';
+import { Language } from '../types';
 import { Phone, Mail, Globe, MapPin, Youtube, Facebook, Send } from 'lucide-react';
 
 interface ContactProps {
@@ -103,16 +103,16 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
           </div>
         </div>
         
-        <div className="mt-32 pt-12 border-t border-white/5 text-center">
+        <footer className="mt-32 pt-12 border-t border-white/5 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-4">
             &copy; 2024 Dr. Soe Lwin (Mandalay) &bull; A Dedicated Dhamma Publication
           </p>
-          <div className="flex justify-center gap-8 text-xs font-semibold tracking-widest text-slate-600 uppercase">
+          <nav className="flex justify-center gap-8 text-xs font-semibold tracking-widest text-slate-600 uppercase" aria-label="Footer navigation">
             <a href="#" className="hover:text-amber-500 transition-colors">Privacy</a>
             <a href="#" className="hover:text-amber-500 transition-colors">Terms</a>
             <a href="#" className="hover:text-amber-500 transition-colors">Media Kit</a>
-          </div>
-        </div>
+          </nav>
+        </footer>
       </div>
     </section>
   );

@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Language } from '../_types';
+import { Language } from '../types';
 import { Globe, Video, Youtube, Facebook, GraduationCap } from 'lucide-react';
-import { LMS_URL } from '../_constants';
+import { LMS_URL } from '../constants';
 
 interface OutreachProps {
   lang: Language;
@@ -13,12 +13,12 @@ const Outreach: React.FC<OutreachProps> = ({ lang }) => {
     <section id="outreach" className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
         <div className="order-2 lg:order-1 space-y-10">
-          <div className="space-y-4">
+          <header className="space-y-4">
             <span className="text-amber-700 font-bold tracking-[0.2em] uppercase text-xs block">International Propagation</span>
             <h2 className="text-4xl md:text-5xl heading-font text-slate-900 leading-tight">
               {lang === 'en' ? 'Wisdom Without Borders' : 'နယ်စပ်မဲ့ တရားဓမ္မ အသိပညာ'}
             </h2>
-          </div>
+          </header>
           
           <div className="space-y-12">
             <div className="flex gap-6 group">

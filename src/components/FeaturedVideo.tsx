@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Language } from '../_types';
+import { Language } from '../types';
 import { FileText, Play, BookOpen } from 'lucide-react';
 
 interface FeaturedVideoProps {
@@ -19,7 +19,7 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ lang }) => {
       <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-64 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 space-y-4">
+        <header className="text-center mb-12 space-y-4">
           <div className="flex items-center justify-center gap-3 text-amber-500 mb-2">
             <BookOpen size={20} className="animate-pulse" />
             <span className="uppercase tracking-[0.4em] text-[10px] md:text-xs font-bold">Biography Film</span>
@@ -40,7 +40,7 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ lang }) => {
               </p>
             )}
           </div>
-        </div>
+        </header>
 
         <div className="relative group max-w-5xl mx-auto">
           <div className="absolute -inset-1 bg-gradient-to-r from-amber-600/20 to-amber-400/20 rounded-2xl blur-lg opacity-25 pointer-events-none"></div>
@@ -66,7 +66,7 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ lang }) => {
             </div>
           </div>
           
-          <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <footer className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 text-slate-500 text-[10px] md:text-xs italic uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
@@ -82,13 +82,14 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ lang }) => {
                 href={pdfBiographyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={lang === 'en' ? 'Read biography PDF in new tab' : 'ကိုယ်ရေးရာဇဝင် PDF ကို တက်ဘ်အသစ်တွင် ဖတ်ရန်'}
                 className="px-10 py-4 bg-amber-700 hover:bg-amber-600 text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-amber-600/20 transition-all hover:-translate-y-1 active:translate-y-0"
               >
                 {lang === 'en' ? 'Read Biography (PDF)' : 'ကိုယ်ရေးရာဇဝင် (PDF) ဖတ်ရန်'}
                 <FileText size={14} />
               </a>
             </div>
-          </div>
+          </footer>
         </div>
       </div>
     </section>

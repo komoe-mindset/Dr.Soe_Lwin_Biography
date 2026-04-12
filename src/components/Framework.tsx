@@ -437,10 +437,11 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((p, i) => (
-            <div 
+            <button 
               key={i} 
               onClick={() => setSelectedPillar(p)}
-              className="group relative bg-white/[0.02] border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col h-full"
+              aria-label={`${lang === 'en' ? 'Learn more about' : 'အသေးစိတ်လေ့လာရန်'} ${p.title[lang]}`}
+              className="group relative bg-white/[0.02] border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.04] transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col h-full text-left"
             >
               {/* Pillar Number */}
               <span aria-hidden="true" className="absolute top-8 right-10 text-white/5 font-black text-4xl group-hover:text-amber-500/10 transition-colors pointer-events-none">
@@ -468,7 +469,7 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
                 <div className="absolute bottom-0 right-0 w-full h-px bg-amber-500/50"></div>
                 <div className="absolute bottom-0 right-0 w-px h-full bg-amber-500/50"></div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -483,7 +484,12 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
 
       {/* Detailed Modal */}
       {selectedPillar && (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8">
+        <div 
+          className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
           <div 
             className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
             onClick={() => setSelectedPillar(null)}
@@ -491,23 +497,24 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
           
           <div className="relative w-full max-w-3xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="p-8 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
+            <header className="p-8 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
               <div className="flex items-center gap-4">
                  <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center">
                    {selectedPillar.icon}
                  </div>
                  <div>
-                    <h3 className="text-2xl font-bold heading-font text-slate-900">{selectedPillar.title[lang]}</h3>
+                    <h3 id="modal-title" className="text-2xl font-bold heading-font text-slate-900">{selectedPillar.title[lang]}</h3>
                     <p className="text-amber-600 text-[10px] font-bold uppercase tracking-widest">{lang === 'en' ? 'Detailed Lecture' : 'တရားဒေသနာ အကျယ်'}</p>
                  </div>
               </div>
               <button 
                 onClick={() => setSelectedPillar(null)}
+                aria-label="Close modal"
                 className="p-2.5 bg-slate-100 hover:bg-red-50 hover:text-red-600 text-slate-900 rounded-full transition-all"
               >
                 <X size={24} />
               </button>
-            </div>
+            </header>
 
             {/* Modal Content */}
             <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar flex-1 bg-slate-50">
@@ -543,7 +550,7 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-6 bg-white border-t border-slate-100 flex justify-between items-center">
+            <footer className="p-6 bg-white border-t border-slate-100 flex justify-between items-center">
               <button 
                 onClick={() => setSelectedPillar(null)}
                 className="px-10 py-4 bg-slate-900 text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-amber-600 transition-all flex items-center gap-2"
@@ -552,9 +559,9 @@ const Framework: React.FC<FrameworkProps> = ({ lang }) => {
               </button>
               <div className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em] flex items-center gap-2">
                 <BookOpen size={14} />
-                <span>Dr. Soe Lwin Archive</span>
+                <span>Dhammalann Archive</span>
               </div>
-            </div>
+            </footer>
           </div>
         </div>
       )}

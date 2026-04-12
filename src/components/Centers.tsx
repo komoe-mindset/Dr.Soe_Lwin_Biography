@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Language, Center } from '../_types';
-import { CENTERS, PAMPHLET_URL } from '../_constants';
+import { Language, Center } from '../types';
+import { CENTERS, PAMPHLET_URL } from '../constants';
 import { Flower2, Landmark, Building2, ArrowRight, X, Calendar, BookOpen, Info, ChevronRight, FileText, ExternalLink, Phone } from 'lucide-react';
 
 interface CentersProps {
@@ -20,7 +20,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
   return (
     <section id="centers" className="py-24 bg-slate-50 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-6">
+        <header className="text-center mb-16 space-y-6">
           <div className="space-y-4">
             <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-xs">Pathways to Peace</span>
             <h2 className="text-4xl md:text-5xl heading-font text-slate-900">
@@ -34,6 +34,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
               href={PAMPHLET_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={lang === 'en' ? 'Open organization pamphlet PDF in new tab' : 'အဖွဲ့၏ လက်ကမ်းစာစောင် PDF ကို တက်ဘ်အသစ်တွင် ဖွင့်ရန်'}
               className="inline-flex items-center gap-3 px-8 py-3 bg-white border border-amber-200 text-amber-800 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] shadow-sm hover:bg-amber-50 hover:border-amber-400 hover:shadow-md transition-all group"
             >
               <FileText size={16} className="text-amber-600 group-hover:scale-110 transition-transform" />
@@ -41,7 +42,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
               <ExternalLink size={12} className="opacity-50" />
             </a>
           </div>
-        </div>
+        </header>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {CENTERS.map((center) => (
@@ -114,30 +115,36 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
 
       {/* Detail Modal */}
       {selectedCenter && (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
+        <div 
+          className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="center-modal-title"
+        >
           <div 
             className="absolute inset-0 bg-slate-900/95 backdrop-blur-md"
             onClick={() => setSelectedCenter(null)}
           ></div>
           
           <div className="relative w-full max-w-4xl bg-white rounded-[2rem] shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 duration-500 max-h-[90vh] flex flex-col">
-            <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-20">
+            <header className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-20">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center">
                   {iconMap[selectedCenter.icon]}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold heading-font">{selectedCenter.title[lang]}</h3>
+                  <h3 id="center-modal-title" className="text-2xl font-bold heading-font">{selectedCenter.title[lang]}</h3>
                   <p className="text-amber-600 text-[10px] font-bold tracking-widest uppercase">{lang === 'en' ? 'Center Archive & Details' : 'စင်တာ၏ သာသနာပြုမှတ်တမ်း'}</p>
                 </div>
               </div>
               <button 
                 onClick={() => setSelectedCenter(null)}
+                aria-label="Close modal"
                 className="p-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <X size={24} />
               </button>
-            </div>
+            </header>
 
             <div className="p-6 md:p-10 overflow-y-auto custom-scrollbar">
               <div className="space-y-12">
@@ -242,7 +249,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
               </div>
             </div>
 
-            <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+            <footer className="p-6 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
               <button 
                 onClick={() => setSelectedCenter(null)}
                 className="px-8 py-3 bg-slate-900 text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-amber-600 transition-colors"
@@ -252,7 +259,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
               <div className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">
                 © {new Date().getFullYear()} Dhammalann Archive
               </div>
-            </div>
+            </footer>
           </div>
         </div>
       )}
