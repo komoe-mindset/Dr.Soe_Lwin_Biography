@@ -77,7 +77,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                 <div className="flex gap-6">
                   <MapPin className="text-amber-500 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-white mb-2">{lang === 'en' ? 'Yangon Dhamma Lann' : 'ရန်ကုန်ဓမ္မလမ်းစင်တာ'}</h4>
+                    <h4 className="font-bold text-white mb-2">{lang === 'en' ? 'Yangon Dhammalann' : 'ရန်ကုန်ဓမ္မလမ်းစင်တာ'}</h4>
                     <p className="text-slate-400 font-light text-sm leading-relaxed">
                       {lang === 'en' 
                         ? 'Dhamma Hall, Mahabodhi Bodhgaya Monastery compound, Bohmu Ba Htoo Road, Ward 42, North Dagon Township, Yangon, Myanmar'

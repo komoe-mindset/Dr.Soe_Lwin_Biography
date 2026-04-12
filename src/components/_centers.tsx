@@ -24,7 +24,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
           <div className="space-y-4">
             <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-xs">Pathways to Peace</span>
             <h2 className="text-4xl md:text-5xl heading-font text-slate-900">
-              {lang === 'en' ? 'Dhamma Lann Centers' : 'ဓမ္မလမ်း ဝိပဿနာစင်တာများ'}
+              {lang === 'en' ? 'Dhammalann Centers' : 'ဓမ္မလမ်း ဝိပဿနာစင်တာများ'}
             </h2>
             <div className="h-1.5 w-24 bg-amber-600 mx-auto rounded-full"></div>
           </div>
@@ -250,7 +250,7 @@ const Centers: React.FC<CentersProps> = ({ lang }) => {
                 {lang === 'en' ? 'Close' : 'ပိတ်ရန်'}
               </button>
               <div className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">
-                © {new Date().getFullYear()} Dhamma Lann Archive
+                © {new Date().getFullYear()} Dhammalann Archive
               </div>
             </div>
           </div>

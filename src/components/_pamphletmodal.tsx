@@ -67,14 +67,14 @@ const PamphletModal: React.FC<PamphletModalProps> = ({ isOpen, onClose, lang }) 
             id="pamphlet-frame"
             srcDoc={PAMPHLET_HTML_CONTENT}
             className="flex-1 w-full h-full border-0"
-            title="Dhamma Lann Pamphlet Content"
+            title="Dhammalann Pamphlet Content"
           />
         </div>
 
         {/* Footer */}
         <div className="px-6 py-3 bg-white border-t border-slate-100 flex justify-center">
            <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.4em]">
-             Visuddhimag Dhamma Lann Archive • Interactive Reader
+             Visuddhimag Dhammalann Archive • Interactive Reader
            </p>
         </div>
       </div>

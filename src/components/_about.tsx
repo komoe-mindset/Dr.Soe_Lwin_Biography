@@ -64,7 +64,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               </p>
               <p>
                 {lang === 'en'
-                  ? 'Born in Mandalay (1958) and educated at the University of Medicine, he spent decades serving at the Mandalay Ziwita Sangha Hospital before dedicating his life to spreading the "Path of Dhamma" (Dhamma Lann).'
+                  ? 'Born in Mandalay (1958) and educated at the University of Medicine, he spent decades serving at the Mandalay Ziwita Sangha Hospital before dedicating his life to spreading the "Path of Dhamma" (Dhammalann).'
                   : '၁၉၅၈ ခုနှစ် မန္တလေးမြို့တွင် မွေးဖွားခဲ့ပြီး ဆေးပညာဘွဲ့ ရရှိပြီးနောက် မန္တလေးဇီဝိတဒါနသံဃာ့ဆေးရုံကြီးတွင် ဆယ်စုနှစ်ပေါင်းများစွာ တာဝန်ထမ်းဆောင်ခဲ့ကာ၊ ယခုအခါ "ဓမ္မလမ်း" သာသနာပြုလုပ်ငန်းများကို အားသွန်ခွန်စိုက် ဆောင်ရွက်လျက်ရှိသည်။'}
               </p>
             </div>

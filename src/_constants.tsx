@@ -172,7 +172,7 @@ export const CENTERS: Center[] = [
     title: { en: 'Pyin Oo Lwin (Pyin Sar)', mm: 'ပြင်ဦးလွင် (ပြင်စာ)' },
     discourses: PYIN_OO_LWIN_DISCOURSES,
     description: { 
-      en: 'Visuddhimag Dhammalaan offers monthly residential meditation courses and Training of Trainers (TOT) programs in a serene highland setting.', 
+      en: 'Visuddhimag Dhammalann offers monthly residential meditation courses and Training of Trainers (TOT) programs in a serene highland setting.', 
       mm: 'ဝိသုဒ္ဓိမဂ် ဓမ္မလမ်းတွင် လစဉ် တရားစခန်းများနှင့် นည်းပြသင်တန်းများကို အေးချမ်းသာယာသော တောင်ပေါ်ဒေသ၌ ပုံမှန်ပို့ချပေးလျက်ရှိသည်။' 
     },
     icon: 'Lotus',

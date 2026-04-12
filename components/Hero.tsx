@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           </h1>
           <div className="flex flex-col items-center space-y-1 mt-2">
             <span className="text-xl md:text-3xl font-medium tracking-[0.2em] text-blue-200/90 heading-font uppercase">
-              Dhamma Lann
+              Dhammalann
             </span>
             <span className="text-xl md:text-3xl italic font-serif text-amber-500 drop-shadow-lg">
               (Mandalay)
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
           ) : (
             <div className="text-sm md:text-lg text-white/90 font-medium max-w-4xl mx-auto leading-relaxed flex flex-col gap-1">
-              <span className="block">Patron of Visuddhimag Dhamma Lann Vipassana Organizations,</span>
+              <span className="block">Patron of Visuddhimag Dhammalann Vipassana Organizations,</span>
               <span className="block">Mahasaddhamajawtikadaja</span>
               <span className="block text-amber-400 font-bold uppercase tracking-wide">Dr. Soe Lwin (Mandalay)</span>
             </div>
